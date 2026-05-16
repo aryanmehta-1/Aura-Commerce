@@ -1,0 +1,381 @@
+/* =============================================
+   AURA — Shared Styles (style.css)
+   Used by: index, shop, product, cart, reviews
+   ============================================= */
+
+/* =============================================
+   GOOGLE FONTS
+   ============================================= */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Space+Grotesk:wght@300;400;500;600&display=swap');
+
+/* =============================================
+   DEFAULT THEME — AURA MIDNIGHT GOLD
+   ============================================= */
+:root {
+  --bg: #0a0a0f;
+  --bg2: #12121a;
+  --accent: #c9a84c;
+  --accent2: #e8c97a;
+  --text: #f0ece0;
+  --text2: #a09880;
+  --card: #1a1a24;
+  --border: #2a2a3a;
+  --glow: rgba(201, 168, 76, 0.3);
+  --blur-bg: rgba(26, 26, 36, 0.75);
+  --transition: 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  --noise: none;
+  --overlay: none;
+  --font-body: 'DM Sans', sans-serif;
+  --font-head: 'Cormorant Garamond', serif;
+}
+
+/* =============================================
+   MOOD RADIO HIDDEN
+   ============================================= */
+.mood-radios { position: absolute; top: -9999px; left: -9999px; }
+#mood-panel-toggle { position: absolute; top: -9999px; left: -9999px; }
+
+/* =============================================
+   MOOD 1 — ☁️ CLOUD WHITE
+   Crisp editorial magazine feel. Sharp. Clean. 
+   Luxury paper texture, subtle grid, ink-blue accents.
+   ============================================= */
+body:has(#mood-cloud:checked) {
+  --bg: #fafaf8;
+  --bg2: #f0ede8;
+  --accent: #1a1a2e;
+  --accent2: #4a4a6a;
+  --text: #0d0d14;
+  --text2: #6b6b80;
+  --card: #ffffff;
+  --border: #dddad4;
+  --glow: rgba(26, 26, 46, 0.08);
+  --blur-bg: rgba(255, 255, 255, 0.92);
+}
+body:has(#mood-cloud:checked) {
+  background-color: #fafaf8;
+  background-image:
+    linear-gradient(rgba(26,26,46,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26,26,46,0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* =============================================
+   MOOD 2 — 🌑 OBSIDIAN VOID
+   Deep space. Stars. Floating particles.
+   Pure black with iridescent star-dust shimmer.
+   ============================================= */
+body:has(#mood-obsidian:checked) {
+  --bg: #000000;
+  --bg2: #06060f;
+  --accent: #a78bfa;
+  --accent2: #ddd6fe;
+  --text: #e8e4f4;
+  --text2: #6b6690;
+  --card: #0c0c18;
+  --border: #1e1b30;
+  --glow: rgba(167, 139, 250, 0.25);
+  --blur-bg: rgba(6, 6, 15, 0.82);
+}
+body:has(#mood-obsidian:checked) {
+  background-color: #000000;
+  background-image: radial-gradient(ellipse at 20% 20%, rgba(167,139,250,0.06) 0%, transparent 50%),
+                    radial-gradient(ellipse at 80% 80%, rgba(109,40,217,0.06) 0%, transparent 50%);
+}
+body:has(#mood-obsidian:checked) h1,
+body:has(#mood-obsidian:checked) h2,
+body:has(#mood-obsidian:checked) .logo {
+  background: linear-gradient(135deg, #a78bfa, #ddd6fe, #c4b5fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+body:has(#mood-obsidian:checked) .product-card {
+  border: 1px solid #1e1b30;
+  box-shadow: 0 0 0 1px rgba(167,139,250,0.05), inset 0 1px 0 rgba(167,139,250,0.05);
+}
+body:has(#mood-obsidian:checked) .product-card:hover {
+  border-color: rgba(167,139,250,0.4);
+  box-shadow: 0 20px 60px rgba(167,139,250,0.12), 0 0 0 1px rgba(167,139,250,0.2);
+}
+
+/* =============================================
+   MOOD 3 — 🧊 ARCTIC AURORA
+   Northern lights. Shimmering blue-green. 
+   Real animated aurora gradients. Ice glass cards.
+   ============================================= */
+@keyframes auroraShift {
+  0%   { background-position: 0% 50%; }
+  33%  { background-position: 100% 0%; }
+  66%  { background-position: 50% 100%; }
+  100% { background-position: 0% 50%; }
+}
+body:has(#mood-frosted:checked) {
+  --bg: #020f1a;
+  --bg2: #041525;
+  --accent: #00e5b0;
+  --accent2: #5eead4;
+  --text: #e0faff;
+  --text2: rgba(160, 220, 230, 0.75);
+  --card: rgba(0, 20, 40, 0.55);
+  --border: rgba(0, 229, 176, 0.2);
+  --glow: rgba(0, 229, 176, 0.3);
+  --blur-bg: rgba(2, 15, 30, 0.75);
+}
+body:has(#mood-frosted:checked) {
+  background: linear-gradient(125deg,
+    #020f1a 0%,
+    #041a30 15%,
+    #012a20 30%,
+    #041525 45%,
+    #020c25 60%,
+    #051a35 75%,
+    #020f1a 100%
+  );
+  background-size: 400% 400%;
+  animation: auroraShift 18s ease infinite;
+}
+body:has(#mood-frosted:checked)::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 40% at 20% 40%, rgba(0,229,176,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 30% at 80% 60%, rgba(56,189,248,0.1) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 50% at 50% 20%, rgba(99,102,241,0.08) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+  animation: auroraShift 12s ease infinite reverse;
+}
+body:has(#mood-frosted:checked) .product-card,
+body:has(#mood-frosted:checked) nav,
+body:has(#mood-frosted:checked) .mood-panel {
+  background: rgba(0, 20, 40, 0.45) !important;
+  backdrop-filter: blur(20px) saturate(1.5);
+  -webkit-backdrop-filter: blur(20px) saturate(1.5);
+  border: 1px solid rgba(0, 229, 176, 0.15) !important;
+}
+body:has(#mood-frosted:checked) .product-card:hover {
+  border-color: rgba(0,229,176,0.4) !important;
+  box-shadow: 0 0 40px rgba(0,229,176,0.1), 0 20px 60px rgba(0,0,0,0.4) !important;
+}
+
+/* =============================================
+   MOOD 4 — 🔥 EMBER DUSK
+   Sunset meets luxury. Warm amber, deep crimson.
+   Gradient sky with golden shimmer on cards.
+   ============================================= */
+@keyframes emberPulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50%       { opacity: 1;   transform: scale(1.05); }
+}
+body:has(#mood-liquid:checked) {
+  --bg: #0f0500;
+  --bg2: #1a0a00;
+  --accent: #f97316;
+  --accent2: #fbbf24;
+  --text: #fff1e6;
+  --text2: #a87060;
+  --card: #1c0d05;
+  --border: rgba(249, 115, 22, 0.25);
+  --glow: rgba(249, 115, 22, 0.35);
+  --blur-bg: rgba(15, 5, 0, 0.8);
+}
+body:has(#mood-liquid:checked) {
+  background-color: #0f0500;
+  background-image:
+    radial-gradient(ellipse 100% 50% at 50% 0%, rgba(251,191,36,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 60% at 20% 100%, rgba(249,115,22,0.1) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(220,38,38,0.08) 0%, transparent 60%);
+}
+body:has(#mood-liquid:checked) h1,
+body:has(#mood-liquid:checked) h2,
+body:has(#mood-liquid:checked) .logo {
+  background: linear-gradient(135deg, #fbbf24 0%, #f97316 50%, #ef4444 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+body:has(#mood-liquid:checked) .product-card {
+  background: linear-gradient(145deg, #1c0d05, #120800) !important;
+  border: 1px solid rgba(249,115,22,0.15);
+}
+body:has(#mood-liquid:checked) .product-card:hover {
+  border-color: rgba(249,115,22,0.5) !important;
+  box-shadow: 0 20px 50px rgba(249,115,22,0.15), 0 0 0 1px rgba(249,115,22,0.2) !important;
+}
+
+/* =============================================
+   MOOD 5 — ⚡ CYBER NEON
+   Classic cyberpunk. Cyan + magenta. Electric glows.
+   ============================================= */
+body:has(#mood-neon:checked) {
+  --bg: #020014;
+  --bg2: #050024;
+  --accent: #00ffff;
+  --accent2: #ff00ff;
+  --text: #e0eaff;
+  --text2: #5070a0;
+  --card: #0a0520;
+  --border: #00ffff;
+  --glow: rgba(0, 255, 255, 0.5);
+  --blur-bg: rgba(2, 0, 20, 0.8);
+}
+body:has(#mood-neon:checked) .btn-primary,
+body:has(#mood-neon:checked) .btn-cart,
+body:has(#mood-neon:checked) .mood-tab {
+  box-shadow: 0 0 15px var(--accent), inset 0 0 10px var(--accent) !important;
+  text-shadow: 0 0 5px var(--accent);
+  border: 1px solid var(--accent) !important;
+  background: rgba(0, 255, 255, 0.1) !important;
+  color: var(--accent) !important;
+}
+body:has(#mood-neon:checked) h1,
+body:has(#mood-neon:checked) h2,
+body:has(#mood-neon:checked) h3,
+body:has(#mood-neon:checked) .logo {
+  text-shadow: 0 0 10px var(--accent), 0 0 20px var(--accent2) !important;
+}
+body:has(#mood-neon:checked) .product-card {
+  border: 1px solid var(--border);
+  box-shadow: 0 0 10px var(--glow);
+}
+body:has(#mood-neon:checked) .product-card:hover {
+  box-shadow: 0 0 25px var(--accent) !important;
+  border-color: var(--accent);
+}
+
+
+
+
+
+/* =============================================
+   RESET & BASE
+   ============================================= */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body, 'DM Sans', sans-serif);
+  transition: background var(--transition), color var(--transition);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Stack order for pseudo elements used as bg overlays */
+body > * { position: relative; z-index: 1; }
+
+/* =============================================
+   CUSTOM CURSOR
+   ============================================= */
+.cursor {
+  position: fixed; width: 10px; height: 10px;
+  background: var(--accent); border-radius: 50%;
+  pointer-events: none; z-index: 9999;
+  transition: transform 0.1s, background 0.5s, width 0.2s, height 0.2s;
+  mix-blend-mode: difference;
+}
+.cursor-trail {
+  position: fixed; width: 28px; height: 28px;
+  border: 1.5px solid var(--accent); border-radius: 50%;
+  pointer-events: none; z-index: 9998;
+  transition: all 0.18s, border-color 0.5s; opacity: 0.45;
+}
+
+/* =============================================
+   MOOD PANEL (side tab)
+   ============================================= */
+.mood-toggle {
+  position: fixed; right: 0; top: 50%; transform: translateY(-50%);
+  z-index: 1000; display: flex; flex-direction: column; align-items: flex-end;
+}
+.mood-tab {
+  background: var(--accent); color: var(--bg);
+  writing-mode: vertical-rl; padding: 14px 9px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 12px; font-weight: 700; letter-spacing: 4px;
+  cursor: pointer; border-radius: 10px 0 0 10px;
+  transition: all 0.3s; box-shadow: -4px 0 24px var(--glow);
+  user-select: none;
+}
+.mood-tab:hover { padding-right: 14px; }
+.mood-panel {
+  position: fixed; right: -280px; top: 50%; transform: translateY(-50%);
+  width: 280px; background: var(--blur-bg); border: 1px solid var(--border);
+  border-radius: 20px 0 0 20px; padding: 32px 24px;
+  transition: right 0.5s cubic-bezier(0.4, 0, 0.2, 1); z-index: 999;
+  backdrop-filter: blur(24px);
+}
+body:has(#mood-panel-toggle:checked) .mood-panel { right: 0; }
+
+body:has(#mood-cloud:checked) .mood-btn-cloud,
+body:has(#mood-obsidian:checked) .mood-btn-obsidian,
+body:has(#mood-frosted:checked) .mood-btn-frosted,
+body:has(#mood-liquid:checked) .mood-btn-liquid,
+body:has(#mood-neon:checked) .mood-btn-neon,
+body:has(#mood-sepia:checked) .mood-btn-sepia,
+body:has(#mood-holo:checked) .mood-btn-holo {
+  border-color: var(--accent) !important;
+  background: var(--glow) !important;
+  color: var(--accent) !important;
+  transform: translateX(4px);
+}
+.mood-panel h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px; color: var(--accent);
+  margin-bottom: 20px; letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.mood-btn {
+  width: 100%; padding: 11px 16px; margin-bottom: 9px;
+  background: transparent; border: 1px solid var(--border);
+  border-radius: 12px; color: var(--text); font-family: inherit;
+  font-size: 13px; cursor: pointer; text-align: left;
+  transition: all 0.25s; display: flex; align-items: center; gap: 12px;
+  letter-spacing: 0.3px;
+}
+.mood-btn:hover { border-color: var(--accent); background: var(--glow); color: var(--accent); }
+.mood-dot { width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0; }
+
+/* =============================================
+   NAV
+   ============================================= */
+nav {
+  position: sticky; top: 0; width: 100%;
+  padding: 18px 60px; display: flex; justify-content: space-between; align-items: center;
+  z-index: 500; background: var(--blur-bg); border-bottom: 1px solid var(--border);
+  transition: background var(--transition); backdrop-filter: blur(20px);
+}
+.logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px; font-weight: 700; letter-spacing: 6px;
+  color: var(--accent); text-decoration: none;
+  transition: color 0.3s;
+}
+.nav-links { display: flex; gap: 36px; list-style: none; }
+.nav-links a { color: var(--text2); text-decoration: none; font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase; transition: color 0.3s; }
+.nav-links a:hover { color: var(--accent); }
+.nav-icons { display: flex; gap: 20px; align-items: center; }
+.nav-icons a { position: relative; color: var(--text2); text-decoration: none; font-size: 24px; transition: color 0.3s; display: inline-flex; align-items: center; }
+.nav-icons a:hover { color: var(--accent); }
+.cart-count, .wishlist-count {
+  position: absolute; top: -6px; right: -12px;
+  background: var(--accent); color: var(--bg);
+  width: 20px; height: 20px; border-radius: 50%; font-size: 10px;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-weight: 700; font-family: 'DM Sans', sans-serif;
+}
+
+/* =============================================
+   SCROLL REVEAL
+   ============================================= */
+.reveal-hidden {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: all 0.85s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.reveal-active {
+  opacity: 1;
+  transform: translateY(0);
+}

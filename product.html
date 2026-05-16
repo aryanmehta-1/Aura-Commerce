@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AURA — Product Detail</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/product.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+
+<body id="body">
+
+
+  <!-- Hidden inputs for mood switching (pure CSS, no JS) -->
+  <div class="mood-radios">
+    <input type="radio" name="mood" id="mood-cloud" checked>
+    <input type="radio" name="mood" id="mood-obsidian">
+    <input type="radio" name="mood" id="mood-frosted">
+    <input type="radio" name="mood" id="mood-liquid">
+    <input type="radio" name="mood" id="mood-neon">  </div>
+  <input type="checkbox" id="mood-panel-toggle">
+
+  <!-- MOOD PANEL -->
+  <div class="mood-toggle">
+    <label class="mood-tab" for="mood-panel-toggle">✦ AURA</label>
+  </div>
+  <div class="mood-panel" id="moodPanel">
+    <h3>✦ SET YOUR AURA</h3>
+    <label class="mood-btn mood-btn-cloud" for="mood-cloud"><span class="mood-dot" style="background:#fff; border:1px solid #ccc;"></span>☁️ Cloud White</label>
+    <label class="mood-btn mood-btn-obsidian" for="mood-obsidian"><span class="mood-dot" style="background:#000; border:1px solid #333;"></span>🌑 Obsidian Dark</label>
+    <label class="mood-btn mood-btn-frosted" for="mood-frosted"><span class="mood-dot" style="background:#667eea"></span>🧊 Frosted Glass</label>
+    <label class="mood-btn mood-btn-liquid" for="mood-liquid"><span class="mood-dot" style="background:#ff9a9e; border-radius:30% 70% 70% 30%/30% 30% 70% 70%;"></span>🔥 Ember Dusk</label>
+    <label class="mood-btn mood-btn-neon" for="mood-neon"><span class="mood-dot" style="background:#00ffff; box-shadow:0 0 8px #00ffff;"></span>🔋 Cyber Neon</label>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="logo">AURA</a>
+    <ul class="nav-links">
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="new_arrivals.html">New Arrivals</a></li>
+      <li><a href="collections.html">Collections</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+    </ul>
+    <div class="nav-icons">
+      <form action="shop.html" method="GET" style="display:inline-flex; align-items:center; background:var(--blur-bg, rgba(255,255,255,0.05)); border:1px solid var(--border, #333); border-radius:20px; padding:4px 12px; height: 32px;">
+        <input type="search" name="q" placeholder="Search..." required style="background:transparent; border:none; color:var(--text, #fff); outline:none; font-family:inherit; font-size:14px; width:100px;">
+        <button type="submit" style="background:transparent; border:none; cursor:pointer; color:var(--text, #fff); padding:0; margin-left:6px; font-size:14px;">🔍</button>
+      </form>
+      <a href="wishlist.html" style="position:relative;">♡<sup class="wishlist-count" id="wishlistCount">0</sup></a>
+      <a href="cart.html">🛍<sup class="cart-count" id="cartCount">0</sup></a>
+    </div>
+  </nav>
+
+  <div class="breadcrumb">
+    <a href="index.html">Home</a><span>›</span><a href="shop.html">Shop</a><span>›</span>Celestial Wrap Dress
+  </div>
+
+  <div class="product-layout">
+    <!-- GALLERY -->
+    <div class="gallery">
+      <div class="main-img-wrap">
+        <img class="main-img" id="mainImg" src=""
+          alt="Product Image">
+        <div class="img-zoom-hint">🔍 Hover to zoom</div>
+      </div>
+    </div>
+
+    <!-- INFO -->
+    <div class="product-info">
+      <div class="product-brand">AURA Originals</div>
+      <h1 class="product-title">Celestial Wrap Dress</h1>
+      <div class="product-rating">
+        <span class="stars-lg">★★★★½</span>
+        <span class="review-count">4.5 (128 reviews)</span>
+        <a href="reviews.html" class="review-link">See All Reviews →</a>
+      </div>
+      <div class="price-block">
+        <div>
+          <span class="price-old">₹4,299</span>
+          <span class="price-main">₹2,799</span>
+          <span class="price-save">35% OFF</span>
+        </div>
+        <p style="font-size:12px;color:var(--text2);margin-top:8px">Inclusive of all taxes · Free delivery above ₹999
+        </p>
+      </div>
+
+      <div class="option-label">Select Size</div>
+      <div class="size-grid">
+        <button class="size-btn unavail">XS</button>
+        <button class="size-btn">S</button>
+        <button class="size-btn active">M</button>
+        <button class="size-btn">L</button>
+        <button class="size-btn">XL</button>
+        <button class="size-btn unavail">XXL</button>
+      </div>
+
+      <div class="option-label">Select Colour</div>
+      <div class="color-grid">
+        <div class="color-dot active" style="background:#2a1a3a" title="Midnight Plum"></div>
+        <div class="color-dot" style="background:#1a2a1e" title="Forest Night"></div>
+        <div class="color-dot" style="background:#3a1a0a" title="Ember Rust"></div>
+        <div class="color-dot" style="background:#0a1e2e" title="Deep Ocean"></div>
+      </div>
+
+      <div class="add-row">
+        <div class="qty-ctrl">
+          <button class="qty-btn">−</button>
+          <input class="qty-val" id="qty" value="1" readonly>
+          <button class="qty-btn">+</button>
+        </div>
+        <button class="btn-cart">Add to Cart →</button>
+        <button class="btn-wish">♡</button>
+      </div>
+
+      <div class="perks">
+        <a href="terms_conditions.html#shipping" class="perk">
+          <div class="perk-icon">🚚</div>
+          <div class="perk-text">Free Delivery</div>
+        </a>
+        <a href="terms_conditions.html#returns" class="perk">
+          <div class="perk-icon">↩️</div>
+          <div class="perk-text">Easy Returns</div>
+        </a>
+        <a href="terms_conditions.html#authentic" class="perk">
+          <div class="perk-icon">✅</div>
+          <div class="perk-text">Authentic</div>
+        </a>
+      </div>
+
+      <div class="tabs" style="display:none;">
+        <button class="tab active">Description</button>
+        <button class="tab">Specifications</button>
+        <button class="tab">Care Guide</button>
+      </div>
+      <div style="margin-top: 20px;"><h4>Description</h4><div style="margin-top:8px;">A flowing wrap silhouette crafted from premium crêpe fabric. The
+        celestial print draws from deep-sky imagery — nebulae, star clusters, and cosmic dust. Adjustable waist tie,
+        V-neckline, midi length.</div>
+      </div>
+      <div style="margin-top: 20px;"><h4>Specifications</h4>
+        <ul>
+          <li>Fabric: 70% Viscose, 30% Polyester</li>
+          <li>Fit: Regular / Wrap</li>
+          <li>Length: Midi</li>
+          <li>Neckline: Deep V</li>
+          <li>Sleeve: 3/4 Bell Sleeve</li>
+          <li>Origin: India</li>
+        </ul>
+      </div>
+      <div style="margin-top: 20px;"><h4>Care Guide</h4>
+        <ul>
+          <li>Hand wash or delicate cycle</li>
+          <li>Cold water only (30°C max)</li>
+          <li>Do not bleach or tumble dry</li>
+          <li>Iron on low heat, inside out</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- RELATED -->
+  <div class="related">
+    <h2>You Might Also <em>Love</em></h2>
+    <div class="related-grid">
+      <div class="rel-card">
+        <div class="rel-img"><img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400" alt=""></div>
+        <div class="rel-name">Oversized Linen Blazer</div>
+        <div class="rel-price">₹3,499</div>
+      </div>
+      <div class="rel-card">
+        <div class="rel-img"><img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=400" alt=""></div>
+        <div class="rel-name">Ribbed Knit Co-ord</div>
+        <div class="rel-price"><s style="color:var(--text2);font-size:12px">₹3,800</s> ₹2,599</div>
+      </div>
+      <div class="rel-card">
+        <div class="rel-img"><img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=400" alt=""></div>
+        <div class="rel-name">Velvet Slip Heels</div>
+        <div class="rel-price">₹2,199</div>
+      </div>
+      <div class="rel-card">
+        <div class="rel-img"><img src="https://images.unsplash.com/photo-1629198688000-71f23e745b6e?w=400" alt=""></div>
+        <div class="rel-name">Aura Glow Serum Kit</div>
+        <div class="rel-price">₹1,999</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shared JS -->
+  
+
+  <!-- Product-specific JS: gallery, size, qty, tabs, addToCart -->
+  <script src="js/inventory.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/product.js"></script>
+</body>
+
+</html>

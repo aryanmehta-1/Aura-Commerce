@@ -1,0 +1,139 @@
+.legal-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 5% 100px;
+}
+
+.legal-hero {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.legal-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(48px, 8vw, 84px);
+  font-weight: 300;
+  letter-spacing: -2px;
+}
+
+.legal-hero h1 em {
+  color: var(--accent);
+  font-style: italic;
+}
+
+.legal-hero p {
+  color: var(--text2);
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.legal-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.legal-sidebar {
+  position: sticky;
+  top: 100px;
+}
+
+.legal-sidebar ul {
+  list-style: none;
+  border-left: 1px solid var(--border, rgba(255,255,255,0.1));
+  padding-left: 0;
+}
+
+.legal-sidebar li a {
+  display: block;
+  padding: 12px 20px;
+  color: var(--text2);
+  text-decoration: none;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  border-left: 2px solid transparent;
+  margin-left: -1px;
+}
+
+.legal-sidebar li a:hover,
+.legal-sidebar li a.active {
+  color: var(--accent);
+  border-left-color: var(--accent);
+  background: rgba(201, 168, 76, 0.05);
+}
+
+.legal-content section {
+  margin-bottom: 80px;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.legal-content h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px;
+  margin-bottom: 24px;
+  font-weight: 400;
+  color: var(--accent);
+}
+
+.legal-content p {
+  color: var(--text2);
+  line-height: 1.8;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.legal-content ul {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.legal-content li {
+  color: var(--text2);
+  margin-bottom: 12px;
+  padding-left: 24px;
+  position: relative;
+  font-size: 15px;
+}
+
+.legal-content li::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 12px;
+}
+
+.legal-content strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .legal-layout {
+    grid-template-columns: 1fr;
+  }
+  .legal-sidebar {
+    position: static;
+    margin-bottom: 60px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 20px;
+  }
+  .legal-sidebar ul {
+    display: flex;
+    flex-wrap: wrap;
+    border: none;
+    padding: 0;
+  }
+  .legal-sidebar li a {
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    margin: 5px;
+  }
+}

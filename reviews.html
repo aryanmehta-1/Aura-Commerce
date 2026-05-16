@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AURA — Customer Experience</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/reviews.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+
+<body id="body">
+
+  <!-- Hidden inputs for mood switching (pure CSS, no JS) -->
+  <div class="mood-radios">
+    <input type="radio" name="mood" id="mood-cloud" checked>
+    <input type="radio" name="mood" id="mood-obsidian">
+    <input type="radio" name="mood" id="mood-frosted">
+    <input type="radio" name="mood" id="mood-liquid">
+    <input type="radio" name="mood" id="mood-neon">  </div>
+  <input type="checkbox" id="mood-panel-toggle">
+
+  <!-- MOOD PANEL -->
+  <div class="mood-toggle">
+    <label class="mood-tab" for="mood-panel-toggle">✦ AURA</label>
+  </div>
+  <div class="mood-panel" id="moodPanel">
+    <h3>✦ SET YOUR AURA</h3>
+    <label class="mood-btn mood-btn-cloud" for="mood-cloud"><span class="mood-dot" style="background:#fff; border:1px solid #ccc;"></span>☁️ Cloud White</label>
+    <label class="mood-btn mood-btn-obsidian" for="mood-obsidian"><span class="mood-dot" style="background:#000; border:1px solid #333;"></span>🌑 Obsidian Dark</label>
+    <label class="mood-btn mood-btn-frosted" for="mood-frosted"><span class="mood-dot" style="background:#667eea"></span>🧊 Frosted Glass</label>
+    <label class="mood-btn mood-btn-liquid" for="mood-liquid"><span class="mood-dot" style="background:#ff9a9e; border-radius:30% 70% 70% 30%/30% 30% 70% 70%;"></span>🔥 Ember Dusk</label>
+    <label class="mood-btn mood-btn-neon" for="mood-neon"><span class="mood-dot" style="background:#00ffff; box-shadow:0 0 8px #00ffff;"></span>🔋 Cyber Neon</label>
+  </div>
+
+  <nav>
+    <a href="index.html" class="logo">AURA</a>
+    <ul class="nav-links">
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="new_arrivals.html">New Arrivals</a></li>
+      <li><a href="collections.html">Collections</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+    </ul>
+    <div class="nav-icons">
+      <a href="wishlist.html" style="position:relative;">♡<sup class="wishlist-count" id="wishlistCount">0</sup></a>
+      <a href="cart.html">🛍<sup class="cart-count" id="cartCount">0</sup></a>
+    </div>
+  </nav>
+
+  <main class="reviews-container">
+    <!-- PAGE HERO -->
+    <header class="page-hero">
+      <div class="hero-text">
+        <h1>Voices of <em>AURA</em></h1>
+        <p>Curated experiences from our global community.</p>
+      </div>
+      <div class="overall-stats">
+        <div class="big-score">4.8</div>
+        <div class="stats-meta">
+          <div class="stars-row">★★★★★</div>
+          <div class="total-count">Based on 1,420+ Reviews</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- BREAKDOWN & FILTERS -->
+    <section class="breakdown-row">
+      <div class="bars-container">
+        <div class="bar-row"><span>5★</span><div class="bar-track"><div class="bar-fill" style="width: 82%"></div></div><span>82%</span></div>
+        <div class="bar-row"><span>4★</span><div class="bar-track"><div class="bar-fill" style="width: 12%"></div></div><span>12%</span></div>
+        <div class="bar-row"><span>3★</span><div class="bar-track"><div class="bar-fill" style="width: 4%"></div></div><span>4%</span></div>
+        <div class="bar-row"><span>2★</span><div class="bar-track"><div class="bar-fill" style="width: 2%"></div></div><span>2%</span></div>
+      </div>
+      <div class="filter-section">
+        <h4>Filter by Category</h4>
+        <div class="tag-cloud">
+          <button class="tag active" data-filter="All">All Stories</button>
+          <button class="tag" data-filter="Fashion">Fashion</button>
+          <button class="tag" data-filter="Electronics">Tech</button>
+          <button class="tag" data-filter="Beauty">Beauty</button>
+          <button class="tag" data-filter="Living">Living</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- MASONRY GALLERY -->
+    <section class="gallery-section">
+      <div class="gallery-header">
+        <h2 class="section-title">Wall of <em>Love</em></h2>
+      </div>
+      <div class="photo-masonry">
+        <div class="photo-item"><img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600" alt=""><div class="overlay">Priya Sharma — Celestial Dress</div></div>
+        <div class="photo-item"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600" alt=""><div class="overlay">Aarav Mehta — Obsidian Watch</div></div>
+        <div class="photo-item"><img src="https://images.unsplash.com/photo-1629198688000-71f23e745b6e?w=600" alt=""><div class="overlay">Zara K. — Glow Serum</div></div>
+        <div class="photo-item"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600" alt=""><div class="overlay">Rahul D. — Lunar Runners</div></div>
+        <div class="photo-item"><img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600" alt=""><div class="overlay">Sneha I. — Linen Blazer</div></div>
+        <div class="photo-item"><img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600" alt=""><div class="overlay">Ananya V. — Velvet Heels</div></div>
+        <div class="photo-item"><img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=600" alt=""><div class="overlay">Ishaan S. — Knit Co-ord</div></div>
+        <div class="photo-item"><img src="images/noise-buds-pro.png" alt=""><div class="overlay">Karan M. — Noise Buds</div></div>
+      </div>
+    </section>
+
+    <!-- REVIEWS GRID -->
+    <section class="reviews-list-section">
+      <div class="reviews-grid" id="reviewsGrid">
+        <!-- Review cards will be injected by JS for filtering, but here are some for initial load -->
+        <div class="review-card">
+          <div class="review-card-header">
+            <div class="reviewer-info">
+              <h5>Priya Sharma</h5>
+              <span>March 2026 <span class="verify-badge">✓ Verified</span></span>
+            </div>
+            <div class="card-stars">★★★★★</div>
+          </div>
+          <div class="review-content">
+            <h4>Transformative Experience</h4>
+            <p>"The 'Mood' switching on this site isn't just a gimmick, it genuinely changes how I shop. The Celestial Wrap Dress is stunning and fits like a dream."</p>
+          </div>
+          <div class="review-footer">
+            <span class="helpful-count">64 people found this helpful</span>
+            <button class="helpful-btn">Helpful</button>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-card-header">
+            <div class="reviewer-info">
+              <h5>Aarav Mehta</h5>
+              <span>March 2026 <span class="verify-badge">✓ Verified</span></span>
+            </div>
+            <div class="card-stars">★★★★★</div>
+          </div>
+          <div class="review-content">
+            <h4>Exceptional Quality</h4>
+            <p>"The Obsidian Watch Pro is a masterpiece. Arrived in premium packaging. The Midnight mode on the site perfectly set the tone for this purchase."</p>
+          </div>
+          <div class="review-footer">
+            <span class="helpful-count">42 people found this helpful</span>
+            <button class="helpful-btn">Helpful</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WRITE A REVIEW FORM -->
+    <section class="form-section">
+      <div class="form-header">
+        <h2>Share Your <em>Experience</em></h2>
+        <p style="color:var(--text2);margin-top:10px">Help others find their aura.</p>
+        <div class="star-picker" id="starPicker">
+          <span class="star-pick" data-val="1">★</span>
+          <span class="star-pick" data-val="2">★</span>
+          <span class="star-pick" data-val="3">★</span>
+          <span class="star-pick" data-val="4">★</span>
+          <span class="star-pick" data-val="5">★</span>
+        </div>
+      </div>
+      <div class="review-form">
+        <div class="form-group"><input type="text" class="r-input" placeholder="Your Name" id="rName"></div>
+        <div class="form-group"><input type="text" class="r-input" placeholder="Product Purchased" id="rProduct"></div>
+        <div class="form-group full"><input type="text" class="r-input" placeholder="Review Title" id="rTitle"></div>
+        <div class="form-group full"><textarea class="r-input" placeholder="Tell us your story..." id="rBody"></textarea></div>
+        <button class="submit-review-btn" id="submitReview">Submit Review ✦</button>
+      </div>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close">×</button>
+    <img src="" alt="" class="lightbox-img" id="lightboxImg">
+  </div>
+
+  <script src="js/inventory.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/reviews.js"></script>
+</body>
+
+</html>

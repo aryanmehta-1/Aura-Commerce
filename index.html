@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AURA — Feel Everything. Buy Anything.</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+
+<body id="body">
+  <!-- Hidden inputs for mood switching (pure CSS, no JS) -->
+  <div class="mood-radios">
+    <input type="radio" name="mood" id="mood-cloud" checked>
+    <input type="radio" name="mood" id="mood-obsidian">
+    <input type="radio" name="mood" id="mood-frosted">
+    <input type="radio" name="mood" id="mood-liquid">
+    <input type="radio" name="mood" id="mood-neon">
+  </div>
+  <input type="checkbox" id="mood-panel-toggle">
+  <!-- MOOD PANEL -->
+  <div class="mood-toggle">
+    <label class="mood-tab" for="mood-panel-toggle">✦ AURA</label>
+  </div>
+  <div class="mood-panel" id="moodPanel">
+    <h3>✦ SET YOUR AURA</h3>
+    <label class="mood-btn mood-btn-cloud" for="mood-cloud"><span class="mood-dot"
+        style="background:#fff; border:1px solid #ccc;"></span>☁️ Cloud White</label>
+    <label class="mood-btn mood-btn-obsidian" for="mood-obsidian"><span class="mood-dot"
+        style="background:#000; border:1px solid #333;"></span>🌑 Obsidian Dark</label>
+    <label class="mood-btn mood-btn-frosted" for="mood-frosted"><span class="mood-dot"
+        style="background:#667eea"></span>🧊 Frosted Glass</label>
+    <label class="mood-btn mood-btn-liquid" for="mood-liquid"><span class="mood-dot"
+        style="background:#ff9a9e; border-radius:30% 70% 70% 30%/30% 30% 70% 70%;"></span>🔥 Ember Dusk</label>
+    <label class="mood-btn mood-btn-neon" for="mood-neon"><span class="mood-dot"
+        style="background:#00ffff; box-shadow:0 0 8px #00ffff;"></span>🔋 Cyber Neon</label>
+  </div>
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="logo">AURA</a>
+    <ul class="nav-links">
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="new_arrivals.html">New Arrivals</a></li>
+      <li><a href="collections.html">Collections</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+    </ul>
+    <div class="nav-icons">
+      <form action="shop.html" method="GET"
+        style="display:inline-flex; align-items:center; background:var(--blur-bg, rgba(255,255,255,0.05)); border:1px solid var(--border, #333); border-radius:20px; padding:4px 12px; height: 32px;">
+        <input type="search" name="q" placeholder="Search..." required
+          style="background:transparent; border:none; color:var(--text, #fff); outline:none; font-family:inherit; font-size:14px; width:100px;">
+        <button type="submit"
+          style="background:transparent; border:none; cursor:pointer; color:var(--text, #fff); padding:0; margin-left:6px; font-size:14px;">🔍</button>
+      </form>
+      <a href="wishlist.html" style="position:relative;">♡<sup class="wishlist-count" id="wishlistCount">0</sup></a>
+      <a href="cart.html">🛍 <sup class="cart-count" id="cartCount">0</sup></a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=2000&q=80" alt="AURA Hero"
+      style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0.9; filter: contrast(1.05);">
+    <div
+      style="position: absolute; inset: 0; background: linear-gradient(90deg, #000 0%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0) 100%); z-index: 1;">
+    </div>
+    <div class="hero-content" style="position: relative; z-index: 2;">
+      <p class="hero-eyebrow">✦ New Season — Feel Everything</p>
+      <h1 class="hero-title">Dress your<br><span>mood,</span><br>own your world.</h1>
+      <p class="hero-sub">AURA is not just a store. It's a state of mind. Discover fashion, tech, beauty & living —
+        curated for how you feel today.</p>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap">
+    <div class="marquee">
+      <span>Fashion</span><span class="dot">✦</span><span>Electronics</span><span
+        class="dot">✦</span><span>Beauty</span><span class="dot">✦</span><span>Living</span><span
+        class="dot">✦</span><span>Footwear</span><span class="dot">✦</span><span>Accessories</span><span
+        class="dot">✦</span>
+      <span>Fashion</span><span class="dot">✦</span><span>Electronics</span><span
+        class="dot">✦</span><span>Beauty</span><span class="dot">✦</span><span>Living</span><span
+        class="dot">✦</span><span>Footwear</span><span class="dot">✦</span><span>Accessories</span><span
+        class="dot">✦</span>
+    </div>
+  </div>
+
+  <!-- CATEGORIES -->
+  <section class="section">
+    <div class="section-header">
+      <h2 class="section-title">Shop by<br><em>Category</em></h2>
+      <a href="shop.html" class="see-all">View All →</a>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-card" onclick="window.location.href='shop.html?category=Fashion'">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500" alt="Fashion">
+        <div class="cat-card-body">
+          <h3>Fashion</h3>
+        </div>
+      </div>
+      <div class="cat-card" onclick="window.location.href='shop.html?category=Electronics'">
+        <img src="https://images.unsplash.com/photo-1468495244123-6c6c332eeece?w=500" alt="Electronics">
+        <div class="cat-card-body">
+          <h3>Electronics</h3>
+        </div>
+      </div>
+      <div class="cat-card" onclick="window.location.href='shop.html?category=Beauty'">
+        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=500" alt="Beauty">
+        <div class="cat-card-body">
+          <h3>Beauty</h3>
+        </div>
+      </div>
+      <div class="cat-card" onclick="window.location.href='shop.html?category=Living'">
+        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=500" alt="Living">
+        <div class="cat-card-body">
+          <h3>Living</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PRODUCTS -->
+  <section class="section" style="padding-top:0">
+    <div class="section-header">
+      <h2 class="section-title">Trending<br><em>Right Now</em></h2>
+      <a href="shop.html" class="see-all">View All →</a>
+    </div>
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="product-img">
+          <a href="product.html?id=1"><img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400"
+              alt="Celestial Wrap Dress" style="cursor:pointer"></a>
+          <span class="product-badge">New</span>
+          <div class="product-wishlist" data-id="1" onclick="toggleWishlist(1)">♡</div>
+          <div class="quick-add" data-id="1">＋ Add to Cart</div>
+        </div>
+        <div class="product-cat">Women's Fashion</div>
+        <div class="product-name">Celestial Wrap Dress</div>
+        <div class="product-price"><s>₹4,299</s> ₹2,799</div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <a href="product.html?id=2"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400"
+              alt="Obsidian Watch" style="cursor:pointer"></a>
+          <span class="product-badge">Hot</span>
+          <div class="product-wishlist" data-id="2" onclick="toggleWishlist(2)">♡</div>
+          <div class="quick-add" data-id="2">＋ Add to Cart</div>
+        </div>
+        <div class="product-cat">Accessories</div>
+        <div class="product-name">Obsidian Watch Pro</div>
+        <div class="product-price">₹8,499</div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <a href="product.html?id=3"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400"
+              alt="Lunar Runner" style="cursor:pointer"></a>
+          <div class="product-wishlist" data-id="3" onclick="toggleWishlist(3)">♡</div>
+          <div class="quick-add" data-id="3">＋ Add to Cart</div>
+        </div>
+        <div class="product-cat">Footwear</div>
+        <div class="product-name">Lunar Runner X</div>
+        <div class="product-price"><s>₹6,999</s> ₹4,599</div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <a href="product.html?id=4"><img src="https://images.unsplash.com/photo-1629198688000-71f23e745b6e?w=400"
+              alt="Glow Serum" style="cursor:pointer"></a>
+          <span class="product-badge">Sale</span>
+          <div class="product-wishlist" data-id="4" onclick="toggleWishlist(4)">♡</div>
+          <div class="quick-add" data-id="4">＋ Add to Cart</div>
+        </div>
+        <div class="product-cat">Beauty</div>
+        <div class="product-name">Aura Glow Serum Kit</div>
+        <div class="product-price"><s>₹3,200</s> ₹1,999</div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-brand">
+      <a href="index.html" class="logo" style="font-size:24px">AURA</a>
+      <p>Fashion, tech, beauty and living — all under one roof, shifting to your mood.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <a href="shop.html">All Products</a><a href="new_arrivals.html">New Arrivals</a><a
+        href="collections.html">Collections</a><a href="#">Sale</a>
+    </div>
+    <div class="footer-col">
+      <h4>Help</h4>
+      <a href="cart.html">My Cart</a>
+      <a href="#">Track Order</a>
+      <a href="terms_conditions.html#returns">Returns</a>
+      <a href="terms_conditions.html">Terms & Conditions</a>
+    </div>
+    <div class="footer-col">
+      <h4>About</h4>
+      <a href="#">Our Story</a><a href="reviews.html">Reviews</a><a href="#">Careers</a><a href="#">Press</a>
+    </div>
+  </footer>
+  <div class="footer-bottom">
+    <span>© 2026 AURA. All rights reserved.</span>
+    <span>Made with ✦ for every mood.</span>
+  </div>
+
+  <!-- Shared JS: cursor, mood switching, cart count -->
+
+
+  <!-- Page-specific: scroll nav & minimum search -->
+  <!--  -->
+  <script src="js/inventory.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/index.js"></script>
+</body>
+
+</html>

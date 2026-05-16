@@ -1,0 +1,225 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AURA — New Arrivals & Upcoming</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/new_arrivals.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+
+<body id="body">
+  <!-- Hidden inputs for mood switching -->
+  <div class="mood-radios">
+    <input type="radio" name="mood" id="mood-cloud" checked>
+    <input type="radio" name="mood" id="mood-obsidian">
+    <input type="radio" name="mood" id="mood-frosted">
+    <input type="radio" name="mood" id="mood-liquid">
+    <input type="radio" name="mood" id="mood-neon">
+  </div>
+  <input type="checkbox" id="mood-panel-toggle">
+
+  <!-- MOOD PANEL -->
+  <div class="mood-toggle">
+    <label class="mood-tab" for="mood-panel-toggle">✦ AURA</label>
+  </div>
+  <div class="mood-panel" id="moodPanel">
+    <h3>✦ SET YOUR AURA</h3>
+    <label class="mood-btn mood-btn-cloud" for="mood-cloud"><span class="mood-dot"
+        style="background:#fff; border:1px solid #ccc;"></span>☁️ Cloud White</label>
+    <label class="mood-btn mood-btn-obsidian" for="mood-obsidian"><span class="mood-dot"
+        style="background:#000; border:1px solid #333;"></span>🌑 Obsidian Dark</label>
+    <label class="mood-btn mood-btn-frosted" for="mood-frosted"><span class="mood-dot"
+        style="background:#667eea"></span>🧊 Frosted Glass</label>
+    <label class="mood-btn mood-btn-liquid" for="mood-liquid"><span class="mood-dot"
+        style="background:#ff9a9e; border-radius:30% 70% 70% 30%/30% 30% 70% 70%;"></span>🔥 Ember Dusk</label>
+    <label class="mood-btn mood-btn-neon" for="mood-neon"><span class="mood-dot"
+        style="background:#00ffff; box-shadow:0 0 8px #00ffff;"></span>🔋 Cyber Neon</label>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="logo">AURA</a>
+    <ul class="nav-links">
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="new_arrivals.html" style="color: var(--accent);">New Arrivals</a></li>
+      <li><a href="collections.html">Collections</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+    </ul>
+    <div class="nav-icons">
+      <form action="shop.html" method="GET"
+        style="display:inline-flex; align-items:center; background:var(--blur-bg, rgba(255,255,255,0.05)); border:1px solid var(--border, #333); border-radius:20px; padding:4px 12px; height: 32px;">
+        <input type="search" name="q" placeholder="Search..." required
+          style="background:transparent; border:none; color:var(--text, #fff); outline:none; font-family:inherit; font-size:14px; width:100px;">
+        <button type="submit"
+          style="background:transparent; border:none; cursor:pointer; color:var(--text, #fff); padding:0; margin-left:6px; font-size:14px;">🔍</button>
+      </form>
+      <a href="wishlist.html" style="position:relative;">♡<sup class="wishlist-count" id="wishlistCount">0</sup></a>
+      <a href="cart.html">🛍<sup class="cart-count" id="cartCount">0</sup></a>
+    </div>
+  </nav>
+
+  <!-- SNAP CONTAINER -->
+  <main class="snap-container" id="snapContainer">
+
+    <!-- SECTION 1: Intro -->
+    <section class="snap-section hero-section">
+      <div class="hero-overlay"></div>
+      <div class="content-wrapper text-center">
+        <p class="eyebrow fade-in-up">✦ THE GALLERY OF THE FUTURE</p>
+        <h1 class="massive-title fade-in-up delay-1">New Arrivals</h1>
+        <p class="subtitle fade-in-up delay-2">Curated brilliance. Scroll down to experience the vanguard of AURA.</p>
+        <div class="scroll-indicator fade-in-up delay-3">
+          <div class="mouse">
+            <div class="wheel"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: Celestial Wrap Dress -->
+    <section class="snap-section product-section">
+      <div class="bg-image"
+        style="background-image: url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1600&q=80');">
+      </div>
+      <div class="content-wrapper">
+        <div class="glass-card left-card reveal-card">
+          <div class="badge">JUST ARRIVED</div>
+          <h2>Celestial Wrap Dress</h2>
+          <p class="desc">A flowing wrap silhouette crafted from premium crêpe fabric. The celestial print draws from
+            deep-sky imagery.</p>
+          <div class="price">₹2,799 <span class="old-price">₹4,299</span></div>
+          <button class="buy-btn" data-id="1">Add to Cart ✦</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: Noise Pro Buds -->
+    <section class="snap-section product-section">
+      <div class="bg-image"
+        style="background-image: url('https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQmNhQmwb5EOKW29pMYkL6m2rJzpkvNELWilMbGE4dtLfOEnYTx2VTWpEbto_fj8I-G1DYNvWwyaMGOEZHu6ts8y13ZddIAMEY9OetKXUDIJaGlsyqco1A0OJyvAgr_I8WxHyVpO0kGgcQ&usqp=CAc');">
+      </div>
+      <div class="content-wrapper">
+        <div class="glass-card right-card reveal-card">
+          <div class="badge">JUST ARRIVED</div>
+          <h2>Noise Pro Buds</h2>
+          <p class="desc">Silence the world. Amplify your aura. Adaptive ANC and studio-grade acoustics wrapped in an
+            ergonomic shell.</p>
+          <div class="price">₹2,999</div>
+          <button class="buy-btn" data-id="7">Add to Cart ✦</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: Chic Sunglasses -->
+    <section class="snap-section product-section">
+      <div class="bg-image"
+        style="background-image: url('https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=1600&q=80'); background-position: center 30%;">
+      </div>
+      <div class="content-wrapper">
+        <div class="glass-card left-card reveal-card">
+          <div class="badge">JUST ARRIVED</div>
+          <h2>Chic Sunglasses</h2>
+          <p class="desc">Polarized lenses with a timeless frame. Designed to protect your vision while elevating your
+            entire look.</p>
+          <div class="price">₹5,499 <span class="old-price">₹7,200</span></div>
+          <button class="buy-btn" data-id="20">Add to Cart ✦</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: Minimalist Wall Clock -->
+    <section class="snap-section product-section">
+      <div class="bg-image"
+        style="background-image: url('https://images.unsplash.com/photo-1563861826100-9cb868fdbe1c?w=1600&q=80');">
+      </div>
+      <div class="content-wrapper">
+        <div class="glass-card right-card reveal-card">
+          <div class="badge">JUST ARRIVED</div>
+          <h2>Minimalist Wall Clock</h2>
+          <p class="desc">Time is an illusion, but style is eternal. A silent, sweeping movement inside a brushed steel
+            body.</p>
+          <div class="price">₹1,899</div>
+          <button class="buy-btn" data-id="29">Add to Cart ✦</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: Upcoming Teaser -->
+    <section class="snap-section product-section">
+      <div class="bg-image"
+        style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&q=80'); filter: grayscale(50%) brightness(0.6);">
+      </div>
+      <div class="content-wrapper text-center">
+        <div class="glass-card center-card reveal-card pulse-glow">
+          <div class="badge upcoming-badge">COMING SOON</div>
+          <h2>Aura Smart Mirror</h2>
+          <p class="desc">Reflect your best self. Integrated AI styling, ambient lighting, and mood detection. The
+            future of vanity is almost here.</p>
+          <div class="notify-wrap">
+            <input type="email" class="notify-input" placeholder="Enter your email" id="notifyEmail1">
+            <button class="notify-btn" id="notifyBtn1">Notify Me</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: Upcoming Teaser 2 & Footer -->
+    <section class="snap-section product-section">
+      <div class="bg-image"
+        style="background-image: url('https://images.unsplash.com/photo-1605100804763-247f67b2548e?w=1600&q=80'); filter: grayscale(30%) brightness(0.5);">
+      </div>
+      <div class="content-wrapper text-center flex-column">
+
+        <div class="glass-card center-card reveal-card pulse-glow">
+          <div class="badge upcoming-badge">COMING SOON</div>
+          <h2>Obsidian Ring</h2>
+          <p class="desc">Seamless vital tracking in an elegant ceramic band. Know your body, master your mood. Dropping
+            next month.</p>
+          <div class="notify-wrap">
+            <input type="email" class="notify-input" placeholder="Enter your email" id="notifyEmail2">
+            <button class="notify-btn" id="notifyBtn2">Notify Me</button>
+          </div>
+        </div>
+
+        <!-- Mini Footer within the last snap section to maintain immersion -->
+        <footer class="mini-footer">
+          <div class="footer-brand">
+            <a href="index.html" class="logo" style="font-size:20px">AURA</a>
+          </div>
+          <div class="footer-links">
+            <a href="shop.html">Shop All</a>
+            <a href="terms_conditions.html">Terms</a>
+          </div>
+          <div class="footer-bottom" style="margin-top:10px; border:none; padding:0; justify-content:center;">
+            <span>© 2026 AURA. The Future is Now.</span>
+          </div>
+        </footer>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Dot Navigation (Vertical) -->
+  <div class="dot-nav" id="dotNav">
+    <div class="dot active" data-index="0"></div>
+    <div class="dot" data-index="1"></div>
+    <div class="dot" data-index="2"></div>
+    <div class="dot" data-index="3"></div>
+    <div class="dot" data-index="4"></div>
+    <div class="dot" data-index="5"></div>
+    <div class="dot" data-index="6"></div>
+  </div>
+
+  <script src="js/inventory.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/new_arrivals.js"></script>
+</body>
+
+</html>

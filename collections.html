@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AURA — Collections</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/collections.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+
+<body id="body" class="no-scroll">
+
+  <!-- Hidden inputs for mood switching (pure CSS, no JS) -->
+  <div class="mood-radios">
+    <input type="radio" name="mood" id="mood-cloud" checked>
+    <input type="radio" name="mood" id="mood-obsidian">
+    <input type="radio" name="mood" id="mood-frosted">
+    <input type="radio" name="mood" id="mood-liquid">
+    <input type="radio" name="mood" id="mood-neon">  </div>
+  <input type="checkbox" id="mood-panel-toggle">
+
+  <!-- MOOD PANEL -->
+  <div class="mood-toggle">
+    <label class="mood-tab" for="mood-panel-toggle">✦ AURA</label>
+  </div>
+  <div class="mood-panel" id="moodPanel">
+    <h3>✦ SET YOUR AURA</h3>
+    <label class="mood-btn mood-btn-cloud" for="mood-cloud"><span class="mood-dot"
+        style="background:#fff; border:1px solid #ccc;"></span>☁️ Cloud White</label>
+    <label class="mood-btn mood-btn-obsidian" for="mood-obsidian"><span class="mood-dot"
+        style="background:#000; border:1px solid #333;"></span>🌑 Obsidian Dark</label>
+    <label class="mood-btn mood-btn-frosted" for="mood-frosted"><span class="mood-dot"
+        style="background:#667eea"></span>🧊 Frosted Glass</label>
+    <label class="mood-btn mood-btn-liquid" for="mood-liquid"><span class="mood-dot"
+        style="background:#ff9a9e; border-radius:30% 70% 70% 30%/30% 30% 70% 70%;"></span>🔥 Ember Dusk</label>
+    <label class="mood-btn mood-btn-neon" for="mood-neon"><span class="mood-dot"
+        style="background:#00ffff; box-shadow:0 0 8px #00ffff;"></span>🔋 Cyber Neon</label>
+  </div>
+
+  <nav>
+    <a href="index.html" class="logo">AURA</a>
+    <ul class="nav-links">
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="new_arrivals.html">New Arrivals</a></li>
+      <li><a href="collections.html" style="color: var(--accent);">Collections</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+    </ul>
+    <div class="nav-icons">
+      <form action="shop.html" method="GET"
+        style="display:inline-flex; align-items:center; background:var(--blur-bg, rgba(255,255,255,0.05)); border:1px solid var(--border, #333); border-radius:20px; padding:4px 12px; height: 32px;">
+        <input type="search" name="q" placeholder="Search..." required
+          style="background:transparent; border:none; color:var(--text, #fff); outline:none; font-family:inherit; font-size:14px; width:100px;">
+        <button type="submit"
+          style="background:transparent; border:none; cursor:pointer; color:var(--text, #fff); padding:0; margin-left:6px; font-size:14px;">🔍</button>
+      </form>
+      <a href="wishlist.html" style="position:relative;">♡<sup class="wishlist-count" id="wishlistCount">0</sup></a>
+      <a href="cart.html">🛍<sup class="cart-count" id="cartCount">0</sup></a>
+    </div>
+  </nav>
+
+  <!-- BENTO GRID -->
+  <main class="bento-container">
+    <div class="bento-header">
+      <h1 class="bento-title">Curated Collections</h1>
+      <p class="bento-subtitle">Explore the world of AURA through our carefully crafted categories.</p>
+    </div>
+    
+    <div class="bento-grid">
+      <!-- Fashion: 2 columns, 2 rows -->
+      <a href="shop.html?category=Fashion" class="bento-card bento-hero">
+        <div class="bg-image" style="background-image: url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1600&q=80')"></div>
+        <div class="card-overlay"></div>
+        <div class="card-content">
+          <div class="card-tag">FASHION</div>
+          <h2>Celestial Elegance</h2>
+          <p>Drape yourself in flowing silhouettes and premium fabrics curated for your aura.</p>
+          <span class="explore-link">Explore Fashion ✦</span>
+        </div>
+      </a>
+
+      <!-- Tech: 1 column, 1 row -->
+      <a href="shop.html?category=Electronics" class="bento-card bento-square">
+        <div class="bg-image" style="background-image: url('https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=1600&q=80')"></div>
+        <div class="card-overlay"></div>
+        <div class="card-content">
+          <div class="card-tag">TECH</div>
+          <h2>Digital Vanguard</h2>
+          <p>State of the art technology merged with stunning industrial design.</p>
+          <span class="explore-link">Explore ✦</span>
+        </div>
+      </a>
+
+      <!-- Living: 1 column, 1 row -->
+      <a href="shop.html?category=Living" class="bento-card bento-square">
+        <div class="bg-image" style="background-image: url('https://images.unsplash.com/photo-1505693314120-0d443867891c?w=1600&q=80')"></div>
+        <div class="card-overlay"></div>
+        <div class="card-content">
+          <div class="card-tag">LIVING</div>
+          <h2>Sanctuary</h2>
+          <p>Minimalist, architectural pieces designed for absolute peace.</p>
+          <span class="explore-link">Explore ✦</span>
+        </div>
+      </a>
+
+      <!-- Beauty: 2 columns, 1 row -->
+      <a href="shop.html?category=Beauty" class="bento-card bento-wide">
+        <div class="bg-image" style="background-image: url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=1600&q=80')"></div>
+        <div class="card-overlay"></div>
+        <div class="card-content">
+          <div class="card-tag">BEAUTY</div>
+          <h2>Radiance Within</h2>
+          <p>Organic ingredients and advanced science for your confidence.</p>
+          <span class="explore-link">Explore Beauty ✦</span>
+        </div>
+      </a>
+    </div>
+  </main>
+
+  <script src="js/inventory.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

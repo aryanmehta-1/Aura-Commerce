@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AURA — Terms & Conditions</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/terms_conditions.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+
+<body id="body">
+
+  <!-- Hidden inputs for mood switching (pure CSS, no JS) -->
+  <div class="mood-radios">
+    <input type="radio" name="mood" id="mood-cloud" checked>
+    <input type="radio" name="mood" id="mood-obsidian">
+    <input type="radio" name="mood" id="mood-frosted">
+    <input type="radio" name="mood" id="mood-liquid">
+    <input type="radio" name="mood" id="mood-neon">  </div>
+  <input type="checkbox" id="mood-panel-toggle">
+
+  <!-- MOOD PANEL -->
+  <div class="mood-toggle">
+    <label class="mood-tab" for="mood-panel-toggle">✦ AURA</label>
+  </div>
+  <div class="mood-panel" id="moodPanel">
+    <h3>✦ SET YOUR AURA</h3>
+    <label class="mood-btn mood-btn-cloud" for="mood-cloud"><span class="mood-dot" style="background:#fff; border:1px solid #ccc;"></span>☁️ Cloud White</label>
+    <label class="mood-btn mood-btn-obsidian" for="mood-obsidian"><span class="mood-dot" style="background:#000; border:1px solid #333;"></span>🌑 Obsidian Dark</label>
+    <label class="mood-btn mood-btn-frosted" for="mood-frosted"><span class="mood-dot" style="background:#667eea"></span>🧊 Frosted Glass</label>
+    <label class="mood-btn mood-btn-liquid" for="mood-liquid"><span class="mood-dot" style="background:#ff9a9e; border-radius:30% 70% 70% 30%/30% 30% 70% 70%;"></span>🔥 Ember Dusk</label>
+    <label class="mood-btn mood-btn-neon" for="mood-neon"><span class="mood-dot" style="background:#00ffff; box-shadow:0 0 8px #00ffff;"></span>🔋 Cyber Neon</label>
+  </div>
+
+  <nav>
+    <a href="index.html" class="logo">AURA</a>
+    <ul class="nav-links">
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="new_arrivals.html">New Arrivals</a></li>
+      <li><a href="collections.html">Collections</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+    </ul>
+    <div class="nav-icons">
+      <form action="shop.html" method="GET" style="display:inline-flex; align-items:center; background:var(--blur-bg, rgba(255,255,255,0.05)); border:1px solid var(--border, #333); border-radius:20px; padding:4px 12px; height: 32px;">
+        <input type="search" name="q" placeholder="Search..." required style="background:transparent; border:none; color:var(--text, #fff); outline:none; font-family:inherit; font-size:14px; width:100px;">
+        <button type="submit" style="background:transparent; border:none; cursor:pointer; color:var(--text, #fff); padding:0; margin-left:6px; font-size:14px;">🔍</button>
+      </form>
+      <a href="wishlist.html" style="position:relative;">♡<sup class="wishlist-count" id="wishlistCount">0</sup></a>
+      <a href="cart.html">🛍<sup class="cart-count" id="cartCount">0</sup></a>
+    </div>
+  </nav>
+
+  <main class="legal-container">
+    <header class="legal-hero">
+      <h1>The AURA <em>Policy</em></h1>
+      <p>Transparency and trust at the core of your experience.</p>
+    </header>
+
+    <div class="legal-layout">
+      <aside class="legal-sidebar">
+        <ul>
+          <li><a href="#security">🔒 Secure Shopping</a></li>
+          <li><a href="#authentic">✅ Authenticity Guarantee</a></li>
+          <li><a href="#returns">↩️ Easy Returns</a></li>
+          <li><a href="#shipping">🚚 Shipping Policy</a></li>
+          <li><a href="#privacy">🛡️ Privacy Policy</a></li>
+        </ul>
+      </aside>
+
+      <div class="legal-content">
+        <section id="security">
+          <h2>Secure Shopping</h2>
+          <p>At AURA, your security is our priority. We use industry-standard encryption (SSL) to protect your data during every transaction.</p>
+          <ul>
+            <li><strong>Payment Protection:</strong> We do not store your full card details. All payments are processed through PCI-DSS compliant gateways.</li>
+            <li><strong>Data Encryption:</strong> Your personal information is encrypted at rest and in transit.</li>
+            <li><strong>Fraud Prevention:</strong> Our automated systems monitor for suspicious activity to keep your account safe.</li>
+          </ul>
+        </section>
+
+        <section id="authentic">
+          <h2>Authenticity Guarantee</h2>
+          <p>We take pride in the quality and origin of every item in our collection. AURA guarantees that all products sold on our platform are 100% authentic.</p>
+          <p>Each product undergoes a rigorous multi-point inspection before it reaches your doorstep. We work directly with designers and certified distributors to ensure the highest standards.</p>
+        </section>
+
+        <section id="returns">
+          <h2>Easy Returns</h2>
+          <p>If your purchase doesn't perfectly match your aura, we're here to help. Our 30-day "No-Questions-Asked" return policy ensures a stress-free experience.</p>
+          <ul>
+            <li><strong>Returns:</strong> Initiate a return within 30 days of delivery.</li>
+            <li><strong>Condition:</strong> Items must be in their original packaging with tags intact.</li>
+            <li><strong>Refunds:</strong> Once received, refunds are processed to your original payment method within 5-7 business days.</li>
+          </ul>
+        </section>
+
+        <section id="shipping">
+          <h2>Shipping Policy</h2>
+          <p>We deliver your aura worldwide. Enjoy free standard shipping on all orders above ₹999.</p>
+          <p>Standard delivery typically takes 3-5 business days across major cities. Express shipping options are available at checkout for those who can't wait.</p>
+        </section>
+
+        <section id="privacy">
+          <h2>Privacy Policy</h2>
+          <p>Your privacy is sacred. We only collect data necessary to provide you with a personalized and efficient shopping experience.</p>
+          <p>We never sell your personal data to third parties. For a detailed breakdown of our data practices, please contact our support team.</p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/inventory.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/terms_conditions.js"></script>
+</body>
+
+</html>

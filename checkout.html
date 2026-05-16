@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AURA — Checkout</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/checkout.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+
+<body id="body">
+
+  <!-- Hidden inputs for mood switching (pure CSS, no JS) -->
+  <div class="mood-radios">
+    <input type="radio" name="mood" id="mood-cloud" checked>
+    <input type="radio" name="mood" id="mood-obsidian">
+    <input type="radio" name="mood" id="mood-frosted">
+    <input type="radio" name="mood" id="mood-liquid">
+    <input type="radio" name="mood" id="mood-neon">  </div>
+  <input type="checkbox" id="mood-panel-toggle">
+
+  <!-- MOOD PANEL -->
+  <div class="mood-toggle">
+    <label class="mood-tab" for="mood-panel-toggle">✦ AURA</label>
+  </div>
+  <div class="mood-panel" id="moodPanel">
+    <h3>✦ SET YOUR AURA</h3>
+    <label class="mood-btn mood-btn-cloud" for="mood-cloud"><span class="mood-dot" style="background:#fff; border:1px solid #ccc;"></span>☁️ Cloud White</label>
+    <label class="mood-btn mood-btn-obsidian" for="mood-obsidian"><span class="mood-dot" style="background:#000; border:1px solid #333;"></span>🌑 Obsidian Dark</label>
+    <label class="mood-btn mood-btn-frosted" for="mood-frosted"><span class="mood-dot" style="background:#667eea"></span>🧊 Frosted Glass</label>
+    <label class="mood-btn mood-btn-liquid" for="mood-liquid"><span class="mood-dot" style="background:#ff9a9e; border-radius:30% 70% 70% 30%/30% 30% 70% 70%;"></span>🔥 Ember Dusk</label>
+    <label class="mood-btn mood-btn-neon" for="mood-neon"><span class="mood-dot" style="background:#00ffff; box-shadow:0 0 8px #00ffff;"></span>🔋 Cyber Neon</label>
+  </div>
+
+  <nav>
+    <a href="index.html" class="logo">AURA</a>
+    <ul class="nav-links">
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="new_arrivals.html">New Arrivals</a></li>
+      <li><a href="collections.html">Collections</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+    </ul>
+    <div class="nav-icons">
+      <form action="shop.html" method="GET" style="display:inline-flex; align-items:center; background:var(--blur-bg, rgba(255,255,255,0.05)); border:1px solid var(--border, #333); border-radius:20px; padding:4px 12px; height: 32px;">
+        <input type="search" name="q" placeholder="Search..." required style="background:transparent; border:none; color:var(--text, #fff); outline:none; font-family:inherit; font-size:14px; width:100px;">
+        <button type="submit" style="background:transparent; border:none; cursor:pointer; color:var(--text, #fff); padding:0; margin-left:6px; font-size:14px;">🔍</button>
+      </form>
+      <a href="wishlist.html" style="position:relative;">♡<sup class="wishlist-count" id="wishlistCount">0</sup></a>
+      <a href="cart.html">🛍<sup class="cart-count" id="cartCount">0</sup></a>
+    </div>
+  </nav>
+
+  <div class="checkout-hero">
+    <h1>Complete Your <em>Order</em></h1>
+  </div>
+
+  <div class="steps">
+    <div class="step completed">
+      <div class="step-num">✓</div><span>Cart</span>
+    </div>
+    <div class="step-line active"></div>
+    <div class="step active" id="step1-indicator">
+      <div class="step-num">2</div><span>Shipping</span>
+    </div>
+    <div class="step-line" id="line2-indicator"></div>
+    <div class="step" id="step2-indicator">
+      <div class="step-num">3</div><span>Payment</span>
+    </div>
+    <div class="step-line" id="line3-indicator"></div>
+    <div class="step" id="step3-indicator">
+      <div class="step-num">4</div><span>Review</span>
+    </div>
+  </div>
+
+  <div class="checkout-layout">
+    <div class="checkout-forms">
+      <!-- STEP 1: SHIPPING -->
+      <div class="checkout-step active" id="step1">
+        <h2 class="step-title">Shipping Address</h2>
+        <div class="form-grid">
+          <div class="form-group"><input type="text" class="checkout-input" placeholder="First Name" id="firstName"></div>
+          <div class="form-group"><input type="text" class="checkout-input" placeholder="Last Name" id="lastName"></div>
+          <div class="form-group full"><input type="text" class="checkout-input" placeholder="Address" id="address"></div>
+          <div class="form-group"><input type="text" class="checkout-input" placeholder="City" id="city"></div>
+          <div class="form-group"><input type="text" class="checkout-input" placeholder="State" id="state"></div>
+          <div class="form-group"><input type="text" class="checkout-input" placeholder="Pincode" id="pincode"></div>
+          <div class="form-group"><input type="tel" class="checkout-input" placeholder="Phone Number" id="phone"></div>
+        </div>
+        <button class="next-btn" id="toPayment">Continue to Payment →</button>
+      </div>
+
+      <!-- STEP 2: PAYMENT -->
+      <div class="checkout-step" id="step2">
+        <h2 class="step-title">Payment Method</h2>
+        <div class="payment-options">
+          <label class="pay-option">
+            <input type="radio" name="payment" value="card" checked>
+            <div class="pay-card">
+              <span>💳 Credit/Debit Card</span>
+            </div>
+          </label>
+          <label class="pay-option">
+            <input type="radio" name="payment" value="upi">
+            <div class="pay-card">
+              <span>📱 UPI (GPay/PhonePe)</span>
+            </div>
+          </label>
+          <label class="pay-option">
+            <input type="radio" name="payment" value="cod">
+            <div class="pay-card">
+              <span>💵 Cash on Delivery</span>
+            </div>
+          </label>
+        </div>
+        
+        <div id="card-details" class="card-details-form">
+          <input type="text" class="checkout-input" placeholder="Card Number" style="margin-bottom:15px">
+          <div class="form-grid">
+             <input type="text" class="checkout-input" placeholder="MM/YY">
+             <input type="password" class="checkout-input" placeholder="CVV">
+          </div>
+        </div>
+
+        <div class="btn-row">
+          <button class="back-btn" id="backToShipping">← Back</button>
+          <button class="next-btn" id="toReview">Review Order →</button>
+        </div>
+      </div>
+
+      <!-- STEP 3: REVIEW -->
+      <div class="checkout-step" id="step3">
+        <h2 class="step-title">Review & Confirm</h2>
+        <div class="review-summary">
+          <div class="review-block">
+            <h4>Ship to:</h4>
+            <p id="review-address">Loading...</p>
+          </div>
+          <div class="review-block">
+            <h4>Payment:</h4>
+            <p id="review-payment">Credit Card</p>
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="back-btn" id="backToPayment">← Back</button>
+          <button class="next-btn confirm-btn" id="placeOrder">Place Order Now ✦</button>
+        </div>
+      </div>
+
+      <!-- STEP 4: SUCCESS -->
+      <div class="checkout-step" id="step-success" style="text-align:center; padding: 40px 0;">
+        <div class="success-icon">✦</div>
+        <h2 class="step-title">Order Placed!</h2>
+        <p style="color:var(--text2); margin: 15px 0 30px;">Thank you for your order. We've sent a confirmation email to your inbox.</p>
+        <p style="font-size: 14px; margin-bottom: 30px;">Order ID: <span id="orderId" style="color:var(--accent); font-weight:bold;">#AURA-98234</span></p>
+        <a href="index.html" class="next-btn" style="text-decoration:none; display:inline-block;">Back to Home</a>
+      </div>
+
+    </div>
+
+    <!-- SIDEBAR SUMMARY -->
+    <div class="order-sidebar">
+      <h3>Order Summary</h3>
+      <div class="order-items-list" id="orderItems">
+        <!-- Items will be injected here -->
+      </div>
+      <div class="summary-divider"></div>
+      <div class="summary-row"><span>Subtotal</span><span id="subtotal">₹0</span></div>
+      <div class="summary-row"><span>Delivery</span><span style="color:#4caf50">FREE</span></div>
+      <div class="summary-row" id="discountRow" style="display:none;"><span>Discount</span><span style="color:#4caf50" id="discountVal">-₹0</span></div>
+      <div class="summary-row total"><span>Total</span><span id="total">₹0</span></div>
+    </div>
+  </div>
+
+  <script src="js/inventory.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/checkout.js"></script>
+</body>
+
+</html>

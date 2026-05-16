@@ -503,7 +503,7 @@ Instead of building just another store, the goal was to create:
 ---
 
 <p align="center">
-  <b>Designed & Developed with passion by Aryan Mehta</b>
+  <b>Designed & Developed with passion</b>
 </p>
 
 <p align="center">
